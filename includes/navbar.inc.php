@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -12,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Develop (copy paste)</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -20,11 +19,18 @@
                         Auth
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/g19bcsy3a/?page=login">Login</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="/g19bcsy3a/?page=register">Register</a></li>
+                        <?php if (empty($user)) { ?>
+
+                            <li><a class="dropdown-item" href="/g19bcsy3a/?page=login">Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/g19bcsy3a/?page=register">Register</a></li>
+                        <?php } else { ?>
+                            <li><a class="dropdown-item" href="/g19bcsy3a/?page=logout">Logout</a></li>
+
+                        <?php } ?>
+
                     </ul>
                 </li>
                 <li class="nav-item">

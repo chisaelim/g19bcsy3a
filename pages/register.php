@@ -1,7 +1,6 @@
 <?php
 $nameErr = $usernameErr = $passwdErr = '';
 $name = $username = '';
-
 if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmPasswd'])) {
     $name = trim($_POST['name']);
     $username = trim($_POST['username']);
@@ -26,7 +25,8 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmP
         if (registerUser($name, $username, $passwd)) {
             $name = $username = '';
             echo '<div class="alert alert-success" role="alert">
-            Registration successful! You can now <a href="./?page=login" class="alert-link">login here</a>.
+            Registration successful! You can now 
+            <a href="./?page=login" class="alert-link">login here</a>.
             </div>';
         } else {
             echo '<div class="alert alert-danger" role="alert">
